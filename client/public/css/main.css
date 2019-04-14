@@ -1,0 +1,175 @@
+.body{
+ background-color: white;
+}
+.head
+{
+  color:white;
+}
+.btn
+{
+  color: white;
+  background: skyblue;
+  margin-left:650px;
+  padding: 250px;
+  height: 50px;
+  width: 150px;
+  margin-left:1150px;
+}
+.navbar-header
+{
+height: 100px;
+width: 2000px;
+background: skyblue;
+color:black;
+padding: 23px;
+font-size: 40px;
+}
+#icon
+{
+  width: 30px;
+  color: palevioletred;
+}
+.headings
+{
+  float:right;
+  border-top: 0;
+}
+.sub
+{
+  text-decoration: none;
+  display:table-cell;
+  padding:10px;
+  font-size:15px;
+}
+.sub1
+{
+  text-decoration: none;
+  color: white;
+}
+tr,td
+{
+  height:50px;
+  text-align: left;
+  border: solid;
+  border-width: 1px 0;
+  padding:10px;
+}
+footer, #top
+{
+  margin-top:20px;
+}
+.anc
+{
+  color:black;
+}
+.bright
+{
+  text-align: center;
+  border-right: 1px solid black;
+  font-size: 20px;
+}
+textarea
+{
+  height:160px;
+  width:1000px;
+}
+#send
+{
+  margin-left:850px;
+}
+#title
+{
+  padding-top:320px;
+  text-align: center;
+  font-family: 'Trebuchet MS';
+  font-style:italic;
+  font-size: 80px;
+}
+.btn2
+{
+  border-radius: 5px 5px;
+  width:150px;
+  color: white;
+  background: skyblue;
+  margin-left: 450px;
+  padding: 13px;
+  font-size: 15px;
+}
+#form
+{
+  width:600px;
+  margin-top: 200px;
+}
+form
+{
+  margin-top:50px;
+}
+.log
+{
+margin-top:100px;
+}
+li:hover
+{
+background-color:white;
+cursor:pointer;
+}
+li.sub a:hover
+{
+  text-decoration:none;
+}
+th.bright a:hover
+{
+  text-decoration: none;
+  cursor: pointer;
+}
+a.anc:hover
+{
+  text-decoration: none;
+}
+#prev
+{
+  float:left;
+  position:relative;
+  margin-left:800px;
+}
+#next
+{
+  float:right;
+  position:absolute;
+  margin-left:40px;
+}
+#send
+{
+  float:left;
+  position:relative;
+  margin-left:600px; 
+}
+#cancel
+{
+  float:right;
+  position:absolute;
+  margin-left:40px;  
+}
+input,textarea
+{
+  border: 1px solid black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
