@@ -12,9 +12,9 @@ export function transactionList() {
     }
 }
 
-export function sendData(data) {
+export function sendData(title, question) {
   return function (dispatch){
-          return axios.post('/api/data', {data})
+          return axios.post('/api/get_tags', {title, question})
                       .then(response => {   
                           dispatch({
                             type: 'DATA_LIST',

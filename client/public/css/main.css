@@ -8,7 +8,7 @@
 .btn
 {
   color: white;
-  background: skyblue;
+  background: gray;
   margin-left:650px;
   padding: 250px;
   height: 50px;
@@ -19,7 +19,7 @@
 {
 height: 100px;
 width: 2000px;
-background: skyblue;
+background: gray;
 color:black;
 padding: 23px;
 font-size: 40px;

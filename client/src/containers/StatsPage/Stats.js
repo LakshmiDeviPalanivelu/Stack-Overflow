@@ -1,89 +1,74 @@
-import React, { Component } from 'react';
-import {  Button, Checkbox, Form, Segment, Container, Header, Label, Input, Table} from 'semantic-ui-react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { transactionList } from '../../actions';
-import _ from 'lodash';
-import { Link } from 'react-router-dom';
+import React, {Component} from 'react';
+import {Button, Modal, Header, Form, Link} from 'semantic-ui-react';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import {transactionList} from '../../actions';
 
 class StatsPage extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-     list: []
+    constructor(props) {
+        super(props);
+        this.state = {
+            open: false
+        }
     }
-  }
-  
-  componentWillMount() {
-     this.getList();
-  }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps) {
-       if (nextProps.list.transactions) {
-        this.setList(nextProps);
-      }
+    componentWillMount() {
+
+        if (this.props.open) {
+            this.setState({
+                open: this.props.open
+            })
+        }
     }
-  }
 
-  getList = () => {
-    this.props.transactionList();
-  }
-
-  setList = props => {
-    if (props && props.list.transactions) {
-      this.setState(() => ({
-        list: props.list.transactions
-      }));
+    render() {
+        return (
+            <Modal style={{
+                "height": "27em",
+                "display": "flex",
+                "alignItems": "center",
+                "marginLeft": "270px",
+                "marginTop": "100px",
+                "justifyContent": "center"
+            }} open={this.state.open}>
+                <Modal.Header style={{"color": "red"}}>Authentication failed : Please login to post the
+                    question</Modal.Header>
+                <Modal.Content>
+                    <Modal.Description>
+                        <a href="/auth/stack-exchange"/>
+                    </Modal.Description>
+                    {/*<Form>*/}
+                        {/*<Form.Field>*/}
+                            {/*<label>Email</label>*/}
+                            {/*<input placeholder='email'/>*/}
+                        {/*</Form.Field>*/}
+                        {/*<Form.Field>*/}
+                            {/*<label>Password</label>*/}
+                            {/*<input placeholder='password' type="Password"/>*/}
+                        {/*</Form.Field>*/}
+                    {/*</Form>*/}
+                </Modal.Content>
+                <Modal.Actions>
+                    <Button>
+                        Cancel
+                    </Button>
+                    <Button>
+                        Login
+                    </Button>
+                </Modal.Actions>
+            </Modal>
+        )
     }
-  }
-
-render() {
- return (
- <section id="Login" className="container center"> 
-  <Segment>
-    <Container>
-    <Link to="/">
-      <Button positive floated='right'>Logout</Button>
-    </Link>
-    <br />
-    <br />
-      <Table celled>    
-        <Table.Header>
-          <Table.Row>
-            <Table.HeaderCell>Name</Table.HeaderCell>
-            <Table.HeaderCell>Question</Table.HeaderCell>
-            <Table.HeaderCell>Answer</Table.HeaderCell>
-          </Table.Row>
-        </Table.Header>
-        <Table.Body>
-        { 
-         _.map(this.props.list.transactions, ({ name, question, answer }, index) => (
-          <Table.Row key={index}>
-            <Table.Cell>{name}</Table.Cell>
-            <Table.Cell>{question}</Table.Cell>
-            <Table.Cell>{answer}</Table.Cell>
-          </Table.Row>
-         ))
-        }  
-        </Table.Body>
-      </Table>    
-    
-    </Container>
-  </Segment>
- </section>
- )
-}
 
 }
 
 const mapDispatchToProps = (dispatch) => {
-	return bindActionCreators({ transactionList }, dispatch)
+    return bindActionCreators({transactionList}, dispatch)
 };
 
 const mapStateToProps = (state) => ({
-  list: state.transaction_reducer
+    list: state.transaction_reducer
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(StatsPage);
